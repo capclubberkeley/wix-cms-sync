@@ -1,0 +1,8 @@
+Sync photos: cd into member-photos folder. You want to have a folder of JPGs of the member photos. Make sure all the photos ahve the same aspect ratio (it's useful to keep a PSD file of all the member photos)
+chmod 744 *.jpg && rsync -azP *.jpg capclub:~/public_html/static/member-photos/
+
+Sync posters: cd into folder. Keep a folder similar to member photos but this time with PNGs instead of JPGs.
+chmod 744 *.png && rsync -azP *.png capclub:~/public_html/static/movie-posters/
+
+Remove dashes: cd into folder
+for f in *.png; do mv "$f" "${f//-/ }"; done
